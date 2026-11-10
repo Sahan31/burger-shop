@@ -1,0 +1,24 @@
+{
+  "name": "burger-shop",
+  "version": "1.0.0",
+  "description": "Sarab Restaurant & Fast Food Web Application",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc && node -e \"const fs=require('fs');fs.mkdirSync('Public/dist',{recursive:true});fs.copyFileSync('dist/main.js','Public/dist/main.js');\"",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sahan31/Burger-Shop.git"
+  },
+  "keywords": [
+    "restaurant",
+    "burger-shop",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}

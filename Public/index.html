@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Tailwind CSS v3 CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="dist/main.js" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -909,7 +910,7 @@
                                 <i class="fa-regular fa-heart text-sm"></i>
                             </button>
                             <!-- Food Photo -->
-                            <img src="img/sec4img4.jpg" alt="Crispy Chicken Wrap" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" onerror="this.src='https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80'" />
+                            <img src="img/sec4img4.jpg" alt="Loaded Fajita Wrap" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" onerror="this.src='https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80'" />
                         </div>
 
                         <!-- Card Body -->
@@ -942,7 +943,7 @@
                     </div>
                 </div>
 
-                <!-- Card 5: Artisan Donut Tower (Sweet Deal) -->
+                <!-- Card 5: Nutella Lava Cake (Best Seller) -->
                 <div class="menu-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1.5 flex flex-col justify-between group" data-category="desserts">
                     <div>
                         <!-- Image Container with Badges -->
@@ -956,7 +957,7 @@
                                 <i class="fa-regular fa-heart text-sm"></i>
                             </button>
                             <!-- Food Photo -->
-                            <img src="img/sec4img5.jpg" alt="Artisan Chocolate Donuts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" onerror="this.src='https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80'" />
+                            <img src="img/sec4img5.jpg" alt="Nutella Lava Cake" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" onerror="this.src='https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80'" />
                         </div>
 
                         <!-- Card Body -->
@@ -989,8 +990,8 @@
                     </div>
                 </div>
 
-                <!-- Card 6: Double BBQ Bacon Crunch (Chef Choice) -->
-                <div class="menu-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1.5 flex flex-col justify-between group" data-category="burgers">
+                <!-- Card 6: Truffle Mushroom Pasta (Chef Choice) -->
+                <div class="menu-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1.5 flex flex-col justify-between group" data-category="pasta">
                     <div>
                         <!-- Image Container with Badges -->
                         <div class="relative h-60 sm:h-64 overflow-hidden bg-gray-100">
@@ -1003,12 +1004,12 @@
                                 <i class="fa-regular fa-heart text-sm"></i>
                             </button>
                             <!-- Food Photo -->
-                            <img src="img/sec4img6.jpg" alt="Double BBQ Bacon Crunch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" onerror="this.src='https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80'" />
+                            <img src="img/sec4img6.jpg" alt="Truffle Mushroom Pasta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" onerror="this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80'" />
                         </div>
 
                         <!-- Card Body -->
                         <div class="p-6">
-                            <span class="text-brand-orange text-[11px] font-bold uppercase tracking-wider block mb-1">pasta</span>
+                            <span class="text-brand-orange text-[11px] font-bold uppercase tracking-wider block mb-1">Pasta</span>
                             <h3 class="font-serif font-black text-gray-900 text-xl tracking-tight leading-snug mb-2 group-hover:text-brand-red transition-colors">
                                 Truffle Mushroom Pasta
                             </h3>
@@ -1794,7 +1795,7 @@
 
                 <!-- Right Column: Reservation Form (White Card) -->
                 <div class="lg:col-span-8 bg-white rounded-[28px] p-7 sm:p-9 lg:p-10 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col justify-between">
-                    <form id="reservation-form" novalidate class="space-y-5">
+                    <form id="reservation-form" onsubmit="return handleReservation(event)" novalidate class="space-y-5">
                         
                         <!-- Row 1: Full Name & Phone Number -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -2083,7 +2084,7 @@
 
                 <!-- Right Column: Contact Form (White Card) -->
                 <div class="lg:col-span-8 bg-white rounded-[28px] p-7 sm:p-9 lg:p-10 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col justify-between">
-                    <form id="contact-form" novalidate class="space-y-5">
+                    <form id="contact-form" onsubmit="return handleContact(event)" novalidate class="space-y-5">
                         
                         <!-- Row 1: Your Name & Email Address -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -2263,6 +2264,12 @@
                                 <span>Contact</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="admin.php" class="group flex items-center gap-2 hover:text-white transition-colors">
+                                <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
+                                <span>Admin</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
@@ -2279,37 +2286,37 @@
                     <!-- Links List -->
                     <ul class="space-y-2.5 text-sm">
                         <li>
-                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" data-menu-filter="burgers" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Burgers</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" data-menu-filter="pizza" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Pizza</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" data-menu-filter="chicken" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Fried Chicken</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" data-menu-filter="wraps" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Wraps &amp; Rolls</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" data-menu-filter="pasta" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Pasta</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" data-menu-filter="desserts" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Desserts</span>
                             </a>
@@ -2582,15 +2589,15 @@
                     <!-- Badges Row -->
                     <div class="flex flex-wrap items-center gap-3 mb-6">
                         <div class="bg-[#f8f9fa] rounded-xl px-4 py-2.5 text-center min-w-[70px]">
-                            <span class="block text-gray-900 font-bold text-sm">620 kcal</span>
+                            <span id="pm-calories" class="block text-gray-900 font-bold text-sm">620 kcal</span>
                             <span class="block text-gray-400 text-[10px] font-medium uppercase mt-0.5">Calories</span>
                         </div>
                         <div class="bg-[#f8f9fa] rounded-xl px-4 py-2.5 text-center min-w-[70px]">
-                            <span class="block text-gray-900 font-bold text-sm">12 min</span>
+                            <span id="pm-prep-time" class="block text-gray-900 font-bold text-sm">12 min</span>
                             <span class="block text-gray-400 text-[10px] font-medium uppercase mt-0.5">Prep Time</span>
                         </div>
                         <div class="bg-[#f8f9fa] rounded-xl px-4 py-2.5 text-center min-w-[70px]">
-                            <span class="block text-gray-900 font-bold text-sm">4.9/5</span>
+                            <span id="pm-rating-badge" class="block text-gray-900 font-bold text-sm">4.9/5</span>
                             <span class="block text-gray-400 text-[10px] font-medium uppercase mt-0.5">Rating</span>
                         </div>
                     </div>
@@ -2609,7 +2616,7 @@
                         <span class="text-gray-400 text-xs font-medium uppercase tracking-wider">portion</span>
                     </div>
 
-                    <div class="flex flex-wrap gap-2 mb-8">
+                    <div id="pm-tags" class="flex flex-wrap gap-2 mb-8">
                         <span class="bg-[#fff3e0] text-amber-600 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">Spicy</span>
                         <span class="bg-[#ffebee] text-brand-red text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">Bestseller</span>
                         <span class="bg-gray-100 text-gray-600 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">Beef</span>
@@ -2618,7 +2625,7 @@
                 </div>
 
                 <!-- Add to Cart Button -->
-                <button type="button" class="w-full bg-brand-red hover:bg-brand-redHover text-white font-bold text-sm sm:text-base py-3.5 sm:py-4 rounded-xl shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2">
+                <button type="button" id="pm-add-to-cart-btn" class="w-full bg-brand-red hover:bg-brand-redHover text-white font-bold text-sm sm:text-base py-3.5 sm:py-4 rounded-xl shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span>Add to Cart</span>
                 </button>
@@ -2634,7 +2641,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         mobileBtn?.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            mobileMenu?.classList.toggle('hidden');
         });
 
         // Watch Our Story Modal
@@ -2647,15 +2654,18 @@
         const videoSrc = 'https://www.youtube.com/embed/g2Fz4u5jS-8?autoplay=1';
 
         watchBtn?.addEventListener('click', () => {
+            if (!videoModal || !modalVideoFrame) return;
             modalVideoFrame.src = videoSrc;
             videoModal.classList.remove('hidden');
             videoModal.classList.add('flex');
         });
 
         const closeModal = () => {
-            modalVideoFrame.src = '';
-            videoModal.classList.remove('flex');
-            videoModal.classList.add('hidden');
+            if (modalVideoFrame) modalVideoFrame.src = '';
+            if (videoModal) {
+                videoModal.classList.remove('flex');
+                videoModal.classList.add('hidden');
+            }
         };
 
         closeModalBtn?.addEventListener('click', closeModal);
@@ -2663,7 +2673,7 @@
             if (e.target === videoModal) closeModal();
         });
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+            if (e.key === 'Escape' && videoModal && !videoModal.classList.contains('hidden')) {
                 closeModal();
             }
         });
@@ -2723,11 +2733,23 @@
             });
         });
 
+        // Footer "Our Menu" Category Links
+        document.querySelectorAll('a[data-menu-filter]').forEach(link => {
+            link.addEventListener('click', () => {
+                const filterVal = link.getAttribute('data-menu-filter');
+                const matchingTab = document.querySelector(`.menu-filter-btn[data-filter="${filterVal}"]`);
+                if (matchingTab) {
+                    matchingTab.click();
+                }
+            });
+        });
+
         // Heart / Favorite Toggle
         document.querySelectorAll('.like-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const icon = btn.querySelector('i');
+                if (!icon) return;
                 if (icon.classList.contains('fa-regular')) {
                     icon.classList.remove('fa-regular', 'text-gray-400');
                     icon.classList.add('fa-solid', 'text-brand-red');
@@ -2735,20 +2757,6 @@
                     icon.classList.remove('fa-solid', 'text-brand-red');
                     icon.classList.add('fa-regular', 'text-gray-400');
                 }
-            });
-        });
-
-        // Add to Cart Button Feedback
-        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const icon = btn.querySelector('i');
-                icon.className = 'fa-solid fa-check text-sm';
-                btn.classList.add('bg-emerald-600');
-                setTimeout(() => {
-                    icon.className = 'fa-solid fa-plus text-base font-bold';
-                    btn.classList.remove('bg-emerald-600');
-                }, 1000);
             });
         });
 
@@ -2774,278 +2782,9 @@
         }
 
         // ==========================================
-        // FORM VALIDATION & SUBMISSION HELPERS
+        // FORM SUBMISSION & VALIDATION LOGIC
+        // (Compiled via TypeScript from src/main.ts into dist/main.js)
         // ==========================================
-        function showFieldError(inputEl, errorEl, message) {
-            if (errorEl) {
-                errorEl.textContent = message;
-                errorEl.classList.remove('hidden');
-            }
-            if (inputEl) {
-                inputEl.classList.add('border-red-500', 'focus:ring-red-200', 'focus:border-red-500');
-                inputEl.classList.remove('border-gray-200', 'focus:ring-brand-red/20', 'focus:border-brand-red');
-            }
-        }
-
-        function clearFieldError(inputEl, errorEl) {
-            if (errorEl) {
-                errorEl.classList.add('hidden');
-                errorEl.textContent = '';
-            }
-            if (inputEl) {
-                inputEl.classList.remove('border-red-500', 'focus:ring-red-200', 'focus:border-red-500');
-                inputEl.classList.add('border-gray-200', 'focus:ring-brand-red/20', 'focus:border-brand-red');
-            }
-        }
-
-        function isValidEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-        }
-
-        function isValidPhone(phone) {
-            const digits = phone.replace(/[^\d]/g, '');
-            return digits.length === 10;
-        }
-
-        // ==========================================
-        // SECTION 09: RESERVATION FORM VALIDATION
-        // ==========================================
-        const resForm = document.getElementById('reservation-form');
-        const resSuccess = document.getElementById('reservation-success');
-        const resName = document.getElementById('res-name');
-        const resPhone = document.getElementById('res-phone');
-        const resEmail = document.getElementById('res-email');
-        const resGuests = document.getElementById('res-guests');
-        const resDate = document.getElementById('res-date');
-        const resTime = document.getElementById('res-time');
-
-        // Set minimum date to today
-        if (resDate) {
-            resDate.min = new Date().toISOString().split('T')[0];
-        }
-
-        // Real-time clearance of errors on input
-        resName?.addEventListener('input', () => clearFieldError(resName, document.getElementById('res-name-error')));
-        resPhone?.addEventListener('input', () => clearFieldError(resPhone, document.getElementById('res-phone-error')));
-        resEmail?.addEventListener('input', () => clearFieldError(resEmail, document.getElementById('res-email-error')));
-        resGuests?.addEventListener('change', () => clearFieldError(resGuests, document.getElementById('res-guests-error')));
-        resDate?.addEventListener('input', () => clearFieldError(resDate, document.getElementById('res-date-error')));
-        resTime?.addEventListener('change', () => clearFieldError(resTime, document.getElementById('res-time-error')));
-
-        resForm?.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            let isValid = true;
-            let firstInvalidInput = null;
-
-            // Validate Name
-            if (!resName.value.trim()) {
-                showFieldError(resName, document.getElementById('res-name-error'), 'Name is required');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = resName;
-            } else {
-                clearFieldError(resName, document.getElementById('res-name-error'));
-            }
-
-            // Validate Phone
-            if (!resPhone.value.trim()) {
-                showFieldError(resPhone, document.getElementById('res-phone-error'), 'Phone number is required');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = resPhone;
-            } else if (!isValidPhone(resPhone.value)) {
-                showFieldError(resPhone, document.getElementById('res-phone-error'), 'Please enter a valid phone number');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = resPhone;
-            } else {
-                clearFieldError(resPhone, document.getElementById('res-phone-error'));
-            }
-
-            // Validate Email
-            if (!resEmail.value.trim()) {
-                showFieldError(resEmail, document.getElementById('res-email-error'), 'Email is required');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = resEmail;
-            } else if (!isValidEmail(resEmail.value)) {
-                showFieldError(resEmail, document.getElementById('res-email-error'), 'Please enter a valid email address');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = resEmail;
-            } else {
-                clearFieldError(resEmail, document.getElementById('res-email-error'));
-            }
-
-            // Validate Guests
-            if (!resGuests.value) {
-                showFieldError(resGuests, document.getElementById('res-guests-error'), 'Number of guests is required');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = resGuests;
-            } else {
-                clearFieldError(resGuests, document.getElementById('res-guests-error'));
-            }
-
-            // Validate Date
-            if (!resDate.value) {
-                showFieldError(resDate, document.getElementById('res-date-error'), 'Date is required');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = resDate;
-            } else {
-                clearFieldError(resDate, document.getElementById('res-date-error'));
-            }
-
-            // Validate Time
-            if (!resTime.value) {
-                showFieldError(resTime, document.getElementById('res-time-error'), 'Time is required');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = resTime;
-            } else {
-                clearFieldError(resTime, document.getElementById('res-time-error'));
-            }
-
-            if (!isValid) {
-                firstInvalidInput?.focus();
-                return;
-            }
-
-            // All valid - show simulated loading and confirmation
-            const submitBtn = document.getElementById('res-submit-btn');
-            if (submitBtn) {
-                const originalHtml = submitBtn.innerHTML;
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-base"></i><span>Booking Table...</span>';
-
-                setTimeout(() => {
-                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-check text-base"></i><span>Reservation Confirmed!</span>';
-                    submitBtn.classList.remove('bg-brand-red', 'hover:bg-brand-redHover');
-                    submitBtn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
-                    
-                    if (resSuccess) {
-                        resSuccess.classList.remove('hidden');
-                    }
-
-                    setTimeout(() => {
-                        resForm.reset();
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalHtml;
-                        submitBtn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
-                        submitBtn.classList.add('bg-brand-red', 'hover:bg-brand-redHover');
-                        if (resSuccess) {
-                            setTimeout(() => resSuccess.classList.add('hidden'), 4000);
-                        }
-                    }, 3000);
-                }, 500);
-            }
-        });
-
-        // ==========================================
-        // SECTION 10: CONTACT US FORM VALIDATION
-        // ==========================================
-        const contactForm = document.getElementById('contact-form');
-        const contactSuccess = document.getElementById('contact-success');
-        const contactName = document.getElementById('contact-name');
-        const contactEmail = document.getElementById('contact-email');
-        const contactPhone = document.getElementById('contact-phone');
-        const contactSubject = document.getElementById('contact-subject');
-        const contactMessage = document.getElementById('contact-message');
-
-        // Real-time clearance of errors on input
-        contactName?.addEventListener('input', () => clearFieldError(contactName, document.getElementById('contact-name-error')));
-        contactEmail?.addEventListener('input', () => clearFieldError(contactEmail, document.getElementById('contact-email-error')));
-        contactPhone?.addEventListener('input', () => clearFieldError(contactPhone, document.getElementById('contact-phone-error')));
-        contactSubject?.addEventListener('change', () => clearFieldError(contactSubject, document.getElementById('contact-subject-error')));
-        contactMessage?.addEventListener('input', () => clearFieldError(contactMessage, document.getElementById('contact-message-error')));
-
-        contactForm?.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            let isValid = true;
-            let firstInvalidInput = null;
-
-            // Validate Name
-            if (!contactName.value.trim()) {
-                showFieldError(contactName, document.getElementById('contact-name-error'), 'Name is required');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = contactName;
-            } else {
-                clearFieldError(contactName, document.getElementById('contact-name-error'));
-            }
-
-            // Validate Email
-            if (!contactEmail.value.trim()) {
-                showFieldError(contactEmail, document.getElementById('contact-email-error'), 'Email is required');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = contactEmail;
-            } else if (!isValidEmail(contactEmail.value)) {
-                showFieldError(contactEmail, document.getElementById('contact-email-error'), 'Please enter a valid email address');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = contactEmail;
-            } else {
-                clearFieldError(contactEmail, document.getElementById('contact-email-error'));
-            }
-
-            // Validate Phone Number
-            if (!contactPhone.value.trim()) {
-                showFieldError(contactPhone, document.getElementById('contact-phone-error'), 'Phone number is required');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = contactPhone;
-            } else if (!isValidPhone(contactPhone.value)) {
-                showFieldError(contactPhone, document.getElementById('contact-phone-error'), 'Please enter a valid phone number');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = contactPhone;
-            } else {
-                clearFieldError(contactPhone, document.getElementById('contact-phone-error'));
-            }
-
-            // Validate Subject
-            if (!contactSubject.value) {
-                showFieldError(contactSubject, document.getElementById('contact-subject-error'), 'Subject is required');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = contactSubject;
-            } else {
-                clearFieldError(contactSubject, document.getElementById('contact-subject-error'));
-            }
-
-            // Validate Message
-            if (!contactMessage.value.trim()) {
-                showFieldError(contactMessage, document.getElementById('contact-message-error'), 'Message is required');
-                isValid = false;
-                if (!firstInvalidInput) firstInvalidInput = contactMessage;
-            } else {
-                clearFieldError(contactMessage, document.getElementById('contact-message-error'));
-            }
-
-            if (!isValid) {
-                firstInvalidInput?.focus();
-                return;
-            }
-
-            // All valid - show simulated loading and success
-            const submitBtn = document.getElementById('contact-submit-btn');
-            if (submitBtn) {
-                const originalHtml = submitBtn.innerHTML;
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-sm"></i><span>Sending Message...</span>';
-
-                setTimeout(() => {
-                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-check text-sm"></i><span>Message Sent Successfully!</span>';
-                    submitBtn.classList.remove('bg-brand-red', 'hover:bg-brand-redHover');
-                    submitBtn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
-                    
-                    if (contactSuccess) {
-                        contactSuccess.classList.remove('hidden');
-                    }
-
-                    setTimeout(() => {
-                        contactForm.reset();
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalHtml;
-                        submitBtn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
-                        submitBtn.classList.add('bg-brand-red', 'hover:bg-brand-redHover');
-                        if (contactSuccess) {
-                            setTimeout(() => contactSuccess.classList.add('hidden'), 4000);
-                        }
-                    }, 3000);
-                }, 500);
-            }
-        });
 
         // ==========================================
         // SECTION 08: REVIEWS SLIDESHOW CONTROLLER (4 Reviews, 3 visible by default)
@@ -3115,6 +2854,9 @@
                 if (!targetId || targetId === '#') {
                     e.preventDefault();
                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
                     return;
                 }
 
@@ -3140,13 +2882,16 @@
                     }
 
                     // Auto-close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
                     if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                     }
 
                     // Update URL hash cleanly without instant jumping
-                    history.pushState(null, null, targetId);
+                    try {
+                        history.pushState(null, '', targetId);
+                    } catch {
+                        // Ignore history errors on restricted origins (e.g. file://)
+                    }
                 }
             });
         });
@@ -3169,6 +2914,7 @@
                 }
             });
 
+            const firstSectionTop = sectionsToTrack.length ? sectionsToTrack[0].offsetTop : 300;
             if (currentId) {
                 navLinks.forEach(link => {
                     if (link.getAttribute('href') === currentId) {
@@ -3176,7 +2922,7 @@
                         link.classList.add('active', 'text-gray-900');
                     }
                 });
-            } else if (window.scrollY < 300) {
+            } else if (scrollPos < firstSectionTop) {
                 navLinks.forEach(l => l.classList.remove('active', 'text-gray-900'));
                 const homeLink = document.querySelector('.nav-link[href="#"]');
                 if (homeLink) homeLink.classList.add('active', 'text-gray-900');
@@ -3474,22 +3220,24 @@
         // SCROLL TO TOP BUTTON
         // ==========================================
         const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                scrollToTopBtn.classList.remove('hidden', 'translate-y-20', 'opacity-0');
-                scrollToTopBtn.classList.add('translate-y-0', 'opacity-100');
-            } else {
-                scrollToTopBtn.classList.remove('translate-y-0', 'opacity-100');
-                scrollToTopBtn.classList.add('translate-y-20', 'opacity-0');
-                setTimeout(() => {
-                    if (window.scrollY <= 500) scrollToTopBtn.classList.add('hidden');
-                }, 300);
-            }
-        });
+        if (scrollToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    scrollToTopBtn.classList.remove('hidden', 'translate-y-20', 'opacity-0');
+                    scrollToTopBtn.classList.add('translate-y-0', 'opacity-100');
+                } else {
+                    scrollToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+                    scrollToTopBtn.classList.add('translate-y-20', 'opacity-0');
+                    setTimeout(() => {
+                        if (window.scrollY <= 500) scrollToTopBtn.classList.add('hidden');
+                    }, 300);
+                }
+            });
 
-        scrollToTopBtn?.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
 
         // ==========================================
         // PRODUCT DETAILS MODAL
@@ -3500,46 +3248,164 @@
         const pmQtyMinus = document.getElementById('pm-qty-minus');
         const pmQtyPlus = document.getElementById('pm-qty-plus');
         const pmQty = document.getElementById('pm-qty');
-        
+        const pmAddToCartBtn = document.getElementById('pm-add-to-cart-btn');
+
+        const productMetaMap = {
+            'Classic Smash Burger': {
+                calories: '620 kcal',
+                prepTime: '12 min',
+                rating: '4.9',
+                tags: [
+                    { label: 'Spicy', cls: 'bg-[#fff3e0] text-amber-600' },
+                    { label: 'Bestseller', cls: 'bg-[#ffebee] text-brand-red' },
+                    { label: 'Beef', cls: 'bg-gray-100 text-gray-600' }
+                ]
+            },
+            'Margherita Royale': {
+                calories: '740 kcal',
+                prepTime: '15 min',
+                rating: '4.8',
+                tags: [
+                    { label: 'Vegetarian', cls: 'bg-emerald-50 text-emerald-700' },
+                    { label: 'New', cls: 'bg-[#ffebee] text-brand-red' },
+                    { label: 'Sourdough', cls: 'bg-gray-100 text-gray-600' }
+                ]
+            },
+            'Nashville Hot Chicken': {
+                calories: '580 kcal',
+                prepTime: '14 min',
+                rating: '4.9',
+                tags: [
+                    { label: 'Extra Spicy', cls: 'bg-[#fff3e0] text-amber-600' },
+                    { label: 'Bestseller', cls: 'bg-[#ffebee] text-brand-red' },
+                    { label: 'Chicken', cls: 'bg-gray-100 text-gray-600' }
+                ]
+            },
+            'Loaded Fajita Wrap': {
+                calories: '490 kcal',
+                prepTime: '10 min',
+                rating: '4.8',
+                tags: [
+                    { label: 'Grilled', cls: 'bg-[#fff3e0] text-amber-600' },
+                    { label: 'Popular', cls: 'bg-[#ffebee] text-brand-red' },
+                    { label: 'Chicken', cls: 'bg-gray-100 text-gray-600' }
+                ]
+            },
+            'Nutella Lava Cake': {
+                calories: '420 kcal',
+                prepTime: '8 min',
+                rating: '4.9',
+                tags: [
+                    { label: 'Sweet', cls: 'bg-[#fff3e0] text-amber-600' },
+                    { label: 'Bestseller', cls: 'bg-[#ffebee] text-brand-red' },
+                    { label: 'Dessert', cls: 'bg-gray-100 text-gray-600' }
+                ]
+            },
+            'Truffle Mushroom Pasta': {
+                calories: '610 kcal',
+                prepTime: '16 min',
+                rating: '4.9',
+                tags: [
+                    { label: 'Vegetarian', cls: 'bg-emerald-50 text-emerald-700' },
+                    { label: 'Chef Choice', cls: 'bg-[#ffebee] text-brand-red' },
+                    { label: 'Truffle', cls: 'bg-gray-100 text-gray-600' }
+                ]
+            }
+        };
+
         let currentQty = 1;
+        let currentModalTitle = '';
+        let addBtnResetTimer = null;
+        const originalPmAddHtml = pmAddToCartBtn ? pmAddToCartBtn.innerHTML : '';
+
+        function resetPmAddButton() {
+            if (!pmAddToCartBtn) return;
+            if (addBtnResetTimer) {
+                clearTimeout(addBtnResetTimer);
+                addBtnResetTimer = null;
+            }
+            pmAddToCartBtn.disabled = false;
+            pmAddToCartBtn.innerHTML = originalPmAddHtml;
+            pmAddToCartBtn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
+            pmAddToCartBtn.classList.add('bg-brand-red', 'hover:bg-brand-redHover');
+        }
 
         function openProductModal(cardData) {
             if (!productModal) return;
-            
-            // Populate data
-            document.getElementById('pm-image').src = cardData.image;
-            document.getElementById('pm-category').textContent = cardData.category;
-            document.getElementById('pm-title').textContent = cardData.title;
-            document.getElementById('pm-desc').textContent = cardData.desc;
-            document.getElementById('pm-price').textContent = cardData.price;
-            document.getElementById('pm-old-price').textContent = cardData.oldPrice;
-            
+
+            resetPmAddButton();
+            currentModalTitle = cardData.title;
+
+            const pmImage = document.getElementById('pm-image');
+            const pmCategory = document.getElementById('pm-category');
+            const pmTitle = document.getElementById('pm-title');
+            const pmDesc = document.getElementById('pm-desc');
+            const pmPrice = document.getElementById('pm-price');
+            const pmOldPrice = document.getElementById('pm-old-price');
+            const pmCalories = document.getElementById('pm-calories');
+            const pmPrepTime = document.getElementById('pm-prep-time');
+            const pmRatingBadge = document.getElementById('pm-rating-badge');
+            const pmRatingText = document.getElementById('pm-rating-text');
+            const pmTags = document.getElementById('pm-tags');
+
+            if (pmImage) {
+                pmImage.src = cardData.image;
+                pmImage.alt = cardData.title || 'Product';
+            }
+            if (pmCategory) pmCategory.textContent = cardData.category;
+            if (pmTitle) pmTitle.textContent = cardData.title;
+            if (pmDesc) pmDesc.textContent = cardData.desc;
+            if (pmPrice) pmPrice.textContent = cardData.price;
+            if (pmOldPrice) {
+                pmOldPrice.textContent = cardData.oldPrice;
+                pmOldPrice.classList.toggle('hidden', !cardData.oldPrice);
+            }
+
+            const meta = productMetaMap[cardData.title] || {
+                calories: '550 kcal',
+                prepTime: '12 min',
+                rating: '4.9',
+                tags: [{ label: cardData.category || 'Special', cls: 'bg-[#ffebee] text-brand-red' }]
+            };
+            const reviewCount = cardData.reviews || '128';
+
+            if (pmCalories) pmCalories.textContent = meta.calories;
+            if (pmPrepTime) pmPrepTime.textContent = meta.prepTime;
+            if (pmRatingBadge) pmRatingBadge.textContent = `${meta.rating}/5`;
+            if (pmRatingText) pmRatingText.textContent = `${meta.rating} (${reviewCount} reviews)`;
+            if (pmTags) {
+                pmTags.innerHTML = meta.tags
+                    .map(t => `<span class="${t.cls} text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">${t.label}</span>`)
+                    .join('');
+            }
+
             currentQty = 1;
-            pmQty.textContent = currentQty;
+            if (pmQty) pmQty.textContent = String(currentQty);
 
             // Show Modal
             productModal.classList.remove('hidden');
             productModal.classList.add('flex');
             document.body.classList.add('overflow-hidden');
-            
+
             // Animate in
             setTimeout(() => {
                 productModal.classList.remove('opacity-0');
-                pmContent.classList.remove('scale-95');
-                pmContent.classList.add('scale-100');
+                pmContent?.classList.remove('scale-95');
+                pmContent?.classList.add('scale-100');
             }, 10);
         }
 
         function closeProductModal() {
             if (!productModal) return;
             productModal.classList.add('opacity-0');
-            pmContent.classList.remove('scale-100');
-            pmContent.classList.add('scale-95');
-            
+            pmContent?.classList.remove('scale-100');
+            pmContent?.classList.add('scale-95');
+
             setTimeout(() => {
                 productModal.classList.remove('flex');
                 productModal.classList.add('hidden');
                 document.body.classList.remove('overflow-hidden');
+                resetPmAddButton();
             }, 300);
         }
 
@@ -3547,31 +3413,62 @@
         productModal?.addEventListener('click', (e) => {
             if (e.target === productModal) closeProductModal();
         });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && productModal && !productModal.classList.contains('hidden')) {
+                closeProductModal();
+            }
+        });
 
         pmQtyMinus?.addEventListener('click', () => {
             if (currentQty > 1) {
                 currentQty--;
-                pmQty.textContent = currentQty;
+                if (pmQty) pmQty.textContent = String(currentQty);
             }
         });
-        
+
         pmQtyPlus?.addEventListener('click', () => {
             currentQty++;
-            pmQty.textContent = currentQty;
+            if (pmQty) pmQty.textContent = String(currentQty);
         });
 
-        // Attach click events to all "add-to-cart" buttons in the menu
+        pmAddToCartBtn?.addEventListener('click', () => {
+            if (pmAddToCartBtn.disabled) return;
+            pmAddToCartBtn.disabled = true;
+            pmAddToCartBtn.innerHTML = `<i class="fa-solid fa-circle-check"></i><span>Added ${currentQty} &times; ${currentModalTitle || 'Item'} to Cart!</span>`;
+            pmAddToCartBtn.classList.remove('bg-brand-red', 'hover:bg-brand-redHover');
+            pmAddToCartBtn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+
+            addBtnResetTimer = setTimeout(() => {
+                closeProductModal();
+            }, 1100);
+        });
+
+        // Attach single click event to all "add-to-cart" buttons in the menu
         document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
+                e.stopPropagation();
+
+                const icon = btn.querySelector('i');
+                if (icon) {
+                    icon.className = 'fa-solid fa-check text-sm';
+                    btn.classList.add('bg-emerald-600');
+                    setTimeout(() => {
+                        icon.className = 'fa-solid fa-plus text-base font-bold';
+                        btn.classList.remove('bg-emerald-600');
+                    }, 800);
+                }
+
                 const card = btn.closest('.menu-card');
                 if (!card) return;
 
-                const image = card.querySelector('img').src;
+                const image = card.querySelector('img')?.src || '';
                 const category = card.querySelector('.text-brand-orange')?.textContent || '';
                 const title = card.querySelector('h3')?.textContent || '';
                 const desc = card.querySelector('p')?.textContent || '';
-                
+                const reviewsRaw = card.querySelector('.fa-star + span')?.textContent || '';
+                const reviews = reviewsRaw.replace(/[()]/g, '').trim();
+
                 const priceWrapper = card.querySelector('.flex.items-baseline');
                 let price = '';
                 let oldPrice = '';
@@ -3586,7 +3483,8 @@
                     title: title.trim(),
                     desc: desc.trim(),
                     price: price.trim(),
-                    oldPrice: oldPrice.trim()
+                    oldPrice: oldPrice.trim(),
+                    reviews
                 });
             });
         });
